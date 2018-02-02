@@ -4,7 +4,7 @@
 #
 Name     : numpydoc
 Version  : 0.7.0
-Release  : 1
+Release  : 2
 URL      : https://pypi.python.org/packages/21/94/0e087bd669bb69da3b0996acfee97cee9f7d91c825991ad76eb863dc020d/numpydoc-0.7.0.tar.gz
 Source0  : https://pypi.python.org/packages/21/94/0e087bd669bb69da3b0996acfee97cee9f7d91c825991ad76eb863dc020d/numpydoc-0.7.0.tar.gz
 Summary  : Sphinx extension to support docstrings in Numpy format
