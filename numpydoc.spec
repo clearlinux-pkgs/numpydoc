@@ -6,7 +6,7 @@
 #
 Name     : numpydoc
 Version  : 0.8.0
-Release  : 9
+Release  : 10
 URL      : https://pypi.python.org/packages/95/a8/b4706a6270f0475541c5c1ee3373c7a3b793936ec1f517f1a1dab4f896c0/numpydoc-0.8.0.tar.gz
 Source0  : https://pypi.python.org/packages/95/a8/b4706a6270f0475541c5c1ee3373c7a3b793936ec1f517f1a1dab4f896c0/numpydoc-0.8.0.tar.gz
 Source99 : https://pypi.python.org/packages/95/a8/b4706a6270f0475541c5c1ee3373c7a3b793936ec1f517f1a1dab4f896c0/numpydoc-0.8.0.tar.gz.asc
@@ -14,6 +14,7 @@ Summary  : Sphinx extension to support docstrings in Numpy format
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: numpydoc-python3
+Requires: numpydoc-license
 Requires: numpydoc-python
 Requires: Jinja2
 Requires: Sphinx
@@ -22,13 +23,20 @@ BuildRequires : Sphinx
 BuildRequires : nose
 BuildRequires : pbr
 BuildRequires : pip
-
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
 %description
 .. image:: https://travis-ci.org/numpy/numpydoc.png?branch=master
 :target: https://travis-ci.org/numpy/numpydoc/
+
+%package license
+Summary: license components for the numpydoc package.
+Group: Default
+
+%description license
+license components for the numpydoc package.
+
 
 %package python
 Summary: python components for the numpydoc package.
@@ -56,16 +64,18 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522507529
+export SOURCE_DATE_EPOCH=1530379703
 python3 setup.py build -b py3
 
 %check
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
+PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/numpydoc
+cp LICENSE.txt %{buildroot}/usr/share/doc/numpydoc/LICENSE.txt
 python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -73,6 +83,10 @@ echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/numpydoc/LICENSE.txt
 
 %files python
 %defattr(-,root,root,-)
