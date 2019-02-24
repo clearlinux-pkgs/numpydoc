@@ -6,7 +6,7 @@
 #
 Name     : numpydoc
 Version  : 0.8.0
-Release  : 16
+Release  : 17
 URL      : https://pypi.python.org/packages/95/a8/b4706a6270f0475541c5c1ee3373c7a3b793936ec1f517f1a1dab4f896c0/numpydoc-0.8.0.tar.gz
 Source0  : https://pypi.python.org/packages/95/a8/b4706a6270f0475541c5c1ee3373c7a3b793936ec1f517f1a1dab4f896c0/numpydoc-0.8.0.tar.gz
 Source99 : https://pypi.python.org/packages/95/a8/b4706a6270f0475541c5c1ee3373c7a3b793936ec1f517f1a1dab4f896c0/numpydoc-0.8.0.tar.gz.asc
@@ -61,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551026827
+export SOURCE_DATE_EPOCH=1551035165
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
