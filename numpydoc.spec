@@ -6,7 +6,7 @@
 #
 Name     : numpydoc
 Version  : 0.8.0
-Release  : 17
+Release  : 18
 URL      : https://pypi.python.org/packages/95/a8/b4706a6270f0475541c5c1ee3373c7a3b793936ec1f517f1a1dab4f896c0/numpydoc-0.8.0.tar.gz
 Source0  : https://pypi.python.org/packages/95/a8/b4706a6270f0475541c5c1ee3373c7a3b793936ec1f517f1a1dab4f896c0/numpydoc-0.8.0.tar.gz
 Source99 : https://pypi.python.org/packages/95/a8/b4706a6270f0475541c5c1ee3373c7a3b793936ec1f517f1a1dab4f896c0/numpydoc-0.8.0.tar.gz.asc
