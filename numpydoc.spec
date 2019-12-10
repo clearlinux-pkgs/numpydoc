@@ -4,7 +4,7 @@
 #
 Name     : numpydoc
 Version  : 0.9.1
-Release  : 24
+Release  : 25
 URL      : https://files.pythonhosted.org/packages/6a/f3/7cfe4c616e4b9fe05540256cc9c6661c052c8a4cec2915732793b36e1843/numpydoc-0.9.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/6a/f3/7cfe4c616e4b9fe05540256cc9c6661c052c8a4cec2915732793b36e1843/numpydoc-0.9.1.tar.gz
 Summary  : Sphinx extension to support docstrings in Numpy format
@@ -53,13 +53,15 @@ python3 components for the numpydoc package.
 
 %prep
 %setup -q -n numpydoc-0.9.1
+cd %{_builddir}/numpydoc-0.9.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556990116
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1576012145
+export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -74,12 +76,12 @@ python3 setup.py build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
+PYTHONPATH=%{buildroot}$(python -c "import sys; print(sys.path[-1])") python setup.py test
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/numpydoc
-cp LICENSE.txt %{buildroot}/usr/share/package-licenses/numpydoc/LICENSE.txt
+cp %{_builddir}/numpydoc-0.9.1/LICENSE.txt %{buildroot}/usr/share/package-licenses/numpydoc/df4f727b25238b8a4be050714fe3f1cb06b17f75
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -90,7 +92,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/numpydoc/LICENSE.txt
+/usr/share/package-licenses/numpydoc/df4f727b25238b8a4be050714fe3f1cb06b17f75
 
 %files python
 %defattr(-,root,root,-)
