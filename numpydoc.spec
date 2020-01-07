@@ -4,7 +4,7 @@
 #
 Name     : numpydoc
 Version  : 0.9.2
-Release  : 26
+Release  : 27
 URL      : https://files.pythonhosted.org/packages/b0/70/4d8c3f9f6783a57ac9cc7a076e5610c0cc4a96af543cafc9247ac307fbfe/numpydoc-0.9.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b0/70/4d8c3f9f6783a57ac9cc7a076e5610c0cc4a96af543cafc9247ac307fbfe/numpydoc-0.9.2.tar.gz
 Summary  : Sphinx extension to support docstrings in Numpy format
