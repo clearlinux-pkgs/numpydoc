@@ -4,7 +4,7 @@
 #
 Name     : numpydoc
 Version  : 0.9.2
-Release  : 27
+Release  : 28
 URL      : https://files.pythonhosted.org/packages/b0/70/4d8c3f9f6783a57ac9cc7a076e5610c0cc4a96af543cafc9247ac307fbfe/numpydoc-0.9.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b0/70/4d8c3f9f6783a57ac9cc7a076e5610c0cc4a96af543cafc9247ac307fbfe/numpydoc-0.9.2.tar.gz
 Summary  : Sphinx extension to support docstrings in Numpy format
@@ -23,7 +23,30 @@ BuildRequires : pytest
 
 %description
 .. image:: https://travis-ci.org/numpy/numpydoc.png?branch=master
-:target: https://travis-ci.org/numpy/numpydoc/
+   :target: https://travis-ci.org/numpy/numpydoc/
+
+.. |docs| image:: https://readthedocs.org/projects/numpydoc/badge/?version=latest
+   :alt: Documentation Status
+   :scale: 100%
+   :target: https://numpydoc.readthedocs.io/en/latest/?badge=latest
+
+
+=====================================
+numpydoc -- Numpy's Sphinx extensions
+=====================================
+
+This package provides the ``numpydoc`` Sphinx extension for handling
+docstrings formatted according to the NumPy documentation format.
+The extension also adds the code description directives
+``np:function``, ``np-c:function``, etc.
+
+For usage information, please refer to the `documentation
+<https://numpydoc.readthedocs.io/>`_.
+
+The `numpydoc docstring guide
+<https://numpydoc.readthedocs.io/en/latest/format.html>`_ explains how
+to write docs formatted for this extension, and the `user guide
+<https://numpydoc.readthedocs.io>`_ explains how to use it with Sphinx.
 
 %package license
 Summary: license components for the numpydoc package.
@@ -46,6 +69,7 @@ python components for the numpydoc package.
 Summary: python3 components for the numpydoc package.
 Group: Default
 Requires: python3-core
+Provides: pypi(numpydoc)
 
 %description python3
 python3 components for the numpydoc package.
@@ -60,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578155663
+export SOURCE_DATE_EPOCH=1583188670
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
